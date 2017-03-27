@@ -1,9 +1,4 @@
-<h1>
-  {{title}}
-</h1>
-<p *ngFor="let alert of alerts">
-  <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
-</p>
-<p>
-  <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
-</p>
+<app-header></app-header>
+<div class="container app-body">
+  <app-homepage></app-homepage>
+</div>
