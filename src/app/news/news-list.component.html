@@ -1,0 +1,12 @@
+<h4>List News</h4>
+<ul>
+  <li *ngFor="let news of listNews">
+    {{ news.headline }}
+    {{ news.kicker }}
+    <img src="{{news.pic_src}}" 
+      alt="" 
+      class="img-thumbnail">
+    <br>
+    {{news | json}}
+  </li>
+</ul>
