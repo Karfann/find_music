@@ -11,7 +11,6 @@ import { HeaderComponent } from './shared/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NewsComponent } from './news/news.component';
 import { NewsListComponent } from './news/news-list.component';
-import { NewsDetailComponent } from './news/news-detail.component';
 import { NewsService } from './news/news.service';
 
 @NgModule({
@@ -20,8 +19,7 @@ import { NewsService } from './news/news.service';
     HeaderComponent,
     HomepageComponent,
     NewsComponent,
-    NewsListComponent,
-    NewsDetailComponent
+    NewsListComponent
   ],
   imports: [
     BrowserModule,

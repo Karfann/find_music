@@ -1,12 +1,14 @@
-<h4>List News</h4>
-<ul>
-  <li *ngFor="let news of listNews">
-    {{ news.headline }}
-    {{ news.kicker }}
-    <img src="{{news.pic_src}}" 
-      alt="" 
-      class="img-thumbnail">
-    <br>
-    {{news | json}}
-  </li>
-</ul>
+<div class="row">
+
+  <div class="card col-sm-6" *ngFor="let news of listNews">
+      <img class="card-img-top img-thumbnai" src="{{news.pic_src}}" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{ news.headline }}</h4>
+        <p class="card-text">{{ news.kicker }}</p>
+        <a 
+          href="{{ news.url }}"
+          target="_blank"
+          class="btn btn-outline-primary pull-right">+ Info</a>
+      </div>
+  </div>
+</div>

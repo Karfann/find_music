@@ -5,13 +5,13 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full'},
-    { path: 'home', component: HomepageComponent},
-    {path: 'news', component: NewsComponent}
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomepageComponent },
+    { path: 'news', component: NewsComponent }
 ]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule{}
+export class AppRoutingModule { }

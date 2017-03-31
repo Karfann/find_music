@@ -1,4 +1,5 @@
 export interface News {
+    id: string,
     headline: string,
     kicker: string,
     url: string,
