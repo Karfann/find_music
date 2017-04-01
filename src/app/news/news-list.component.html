@@ -1,14 +1,17 @@
 <div class="row">
-
-  <div class="card col-sm-6" *ngFor="let news of listNews">
-      <img class="card-img-top img-thumbnai" src="{{news.pic_src}}" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">{{ news.headline }}</h4>
-        <p class="card-text">{{ news.kicker }}</p>
-        <a 
-          href="{{ news.url }}"
-          target="_blank"
-          class="btn btn-outline-primary pull-right">+ Info</a>
-      </div>
+  <div class="card col col-md-4" style="width: 20rem;" *ngFor="let news of listNews">
+    <img class="card-img-top img-fluid" src="{{news.pic_src}}" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{ news.headline }}</h4>
+      <p class="card-text">{{ news.kicker }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let tag of news.tags">
+        {{ tag }}
+      </li>
+    </ul>
+    <div class="card-block">
+      <a href="{{ news.url }}" target="_blank" class="card-linkt">+ Info</a>
+    </div>
   </div>
 </div>

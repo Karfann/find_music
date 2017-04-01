@@ -1,15 +1,15 @@
 export interface News {
-    id: string,
-    headline: string,
-    kicker: string,
-    url: string,
-    inserted: string,
-    modified: string,
-    pic_src: string,
-    pic_width: string,
-    pic_height: string,
-    pic_caption: string,
-    tags: Array<string>
+    id: string;
+    headline: string;
+    kicker: string;
+    url: string;
+    inserted: string;
+    modified: string;
+    pic_src: string;
+    pic_width: string;
+    pic_height: string;
+    pic_caption: string;
+    tags: Array<string>;
 }
 
 

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="card card-inverse col col-md-6" *ngFor="let hotspot of hotspots">
+    <a href="{{hotspot.link}}" target="_blank">
+      <img class="card-img" src="{{hotspot.pic_src}}" alt="{{hotspot.type}}">
+      <div class="card-img-overlay">
+        <h4 class="card-title">{{hotspot.title}}</h4>
+        <p class="card-text">{{hotspot.descr}}</p>
+        <p class="card-text"><small class="text-muted">{{hotspot.date_fmt}}</small></p>
+      </div>
+    </a>
+  </div>
+</div>

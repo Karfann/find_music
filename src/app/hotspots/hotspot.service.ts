@@ -1,32 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-
 import { Observable } from 'rxjs/Rx';
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { News } from './news';
+import { VagalumeApi } from './../api/vagalume-api';
+import { Hotspot } from './hotspot';
 
 @Injectable()
-export class NewsService {
+export class HotspotService {
 
-  // https://angular.io/docs/ts/latest/guide/server-communication.html
-  // RxJS library
-  
-  private newsUrl: string = "https://www.vagalume.com.br/news/index.js";
+  private hotspotUrl: string = "https://api.vagalume.com.br/hotspots.php?apikey=";
+  private vagalumeApi: VagalumeApi;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    this.vagalumeApi = new VagalumeApi();
+  }
 
-  getNews(): Observable<News[]> {
+  getHotspots(): Observable<Hotspot[]> {
     return this.http
-      .get(this.newsUrl)
+      .get(this.hotspotUrl + this.vagalumeApi.apiKey)
       .map(this.extractData)
-      .catch(this.handleError);
+      .catch(this.handleError)
   }
 
   private extractData(response: Response) {
     let body = response.json();
-    return body.news || {};
+    return body.hotspots || {};
   }
 
   private handleError(error: Response | any) {
@@ -42,4 +43,5 @@ export class NewsService {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
+
 }

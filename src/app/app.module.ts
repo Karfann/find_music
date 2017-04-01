@@ -12,6 +12,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NewsComponent } from './news/news.component';
 import { NewsListComponent } from './news/news-list.component';
 import { NewsService } from './news/news.service';
+import { HotspotsComponent } from './hotspots/hotspots.component';
+import { HotspotService } from './hotspots/hotspot.service';
+import { HotspotsListComponent } from './hotspots/hotspots-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { NewsService } from './news/news.service';
     HeaderComponent,
     HomepageComponent,
     NewsComponent,
-    NewsListComponent
+    NewsListComponent,
+    HotspotsComponent,
+    HotspotsListComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { NewsService } from './news/news.service';
     NgbModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [NewsService],
+  providers: [NewsService, HotspotService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

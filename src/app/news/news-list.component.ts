@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { News } from './news';
 import { NewsService } from './news.service';
@@ -15,8 +14,7 @@ export class NewsListComponent implements OnInit {
   listNews: Array<News> = [];
 
   constructor(
-    private newsService: NewsService,
-    private router: Router
+    private newsService: NewsService
   ) { }
 
   ngOnInit() {
@@ -30,11 +28,4 @@ export class NewsListComponent implements OnInit {
 
   }
 
-  getData() {
-    this.getNews();
-  }
-
-  onNewDetail(id: number) {
-    this.router.navigate(['/news', id]);
-  }
 }
